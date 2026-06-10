@@ -1,26 +1,44 @@
-let contador = 0;
-/*
-soma receber dois numeros. retorna a soma dos dois numeros
-subtração 
-criar uma funcao que vai executar a operacao, precisa receber o "a", operação, b e 
-deve retornar o resultado.
-
-
-
-*/
-function somar (a,b){
-    let resultado = a + b;
-    return resultado;
+function somar(a, b) {
+    return a + b;
 }
-function subtração (a,b){
-    let resultado = a - b;
-    return resultado ;
 
+function subtrair(a, b) {
+    return a - b;
 }
-function calcular(a,operacao, b){
-    if(operacao =="+"){
-        return somar(a,b);
+
+function multiplicar(a, b) {
+    return a * b;
+}
+
+function dividir(a, b) {
+    if (b === 0) {
+        return "Não é possível dividir por zero";
     }
 
-    return -1;
+    return a / b;
 }
+
+function calcular(a, operacao, b) {
+
+    if (operacao === "+") {
+        return somar(a, b);
+    }
+
+    if (operacao === "-") {
+        return subtrair(a, b);
+    }
+
+    if (operacao === "*") {
+        return multiplicar(a, b);
+    }
+
+    if (operacao === "/") {
+        return dividir(a, b);
+    }
+
+    return "Operação inválida";
+}
+
+console.log(calcular(10, "+", 5));
+
+
